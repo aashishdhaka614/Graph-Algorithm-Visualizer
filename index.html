@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graph Algorithm Visualizer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <header class="topbar">
+        <h1>Graph Algorithm Visualizer</h1>
+      </header>
+
+      <section class="controls">
+        <button id="addNodeBtn" class="btn">Add Node</button>
+        <button id="connectNodeBtn" class="btn">Connect Nodes</button>
+        <button id="clearBtn" class="btn btn-danger">Clear Graph</button>
+
+        <label class="control-group" for="edgeType">
+          Edge Type
+          <select id="edgeType">
+            <option value="undirected">Undirected</option>
+            <option value="directed">Directed</option>
+          </select>
+        </label>
+
+        <label class="control-group" for="algorithmSelect">
+          Algorithm
+          <select id="algorithmSelect">
+            <option value="bfs">BFS</option>
+            <option value="dfs">DFS</option>
+          </select>
+        </label>
+
+        <label class="control-group" for="startNodeSelect">
+          Start Node
+          <select id="startNodeSelect"></select>
+        </label>
+
+        <button id="runBtn" class="btn btn-primary">Run</button>
+        <button id="resetTraversalBtn" class="btn">Reset Traversal</button>
+      </section>
+      <section class="status-panel">
+        <div id="statusText">Status: Ready</div>
+        <div id="dsText">-</div>
+      </section>
+
+    </aside>
+
+    <section class="canvas-wrap">
+      <svg id="graphSvg" class="graph-svg" viewBox="0 0 1000 560" preserveAspectRatio="none">
+        <defs>
+          <marker
+            id="arrowhead"
+            markerWidth="10"
+            markerHeight="10"
+            refX="9"
+            refY="5"
+            orient="auto"
+          >
+            <polygon points="0 0, 10 5, 0 10" fill="#51627a"></polygon>
+          </marker>
+        </defs>
+      </svg>
+    </section>
+
+    <section class="order-panel">
+      <div class="order-title"><strong>Traversal Order</strong></div>
+      <div id="orderText" class="order-content">-</div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
